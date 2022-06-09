@@ -1,4 +1,4 @@
-package starter.wikipedia;
+package starter.wikipedia.demo;
 
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
