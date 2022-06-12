@@ -1,4 +1,4 @@
-package starter.wikipedia.demo;
+package starter.tiki.demo;
 
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

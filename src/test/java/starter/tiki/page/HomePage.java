@@ -1,4 +1,4 @@
-package starter.wikipedia.page;
+package starter.tiki.page;
 
 import net.serenitybdd.screenplay.targets.Target;
 public class HomePage {

@@ -1,4 +1,4 @@
-package starter.wikipedia.task;
+package starter.tiki.task;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

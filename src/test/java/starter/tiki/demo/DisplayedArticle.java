@@ -1,4 +1,4 @@
-package starter.wikipedia.demo;
+package starter.tiki.demo;
 
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;

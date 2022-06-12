@@ -1,4 +1,4 @@
-package starter.wikipedia.helps;
+package starter.tiki.helps;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
