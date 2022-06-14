@@ -11,9 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CheckFileExits implements Task {
-    public static CheckFileExits checkFileExits(){
-        return Tasks.instrumented(CheckFileExits.class);
+public class CheckFileDownLoadExits implements Task {
+    public static CheckFileDownLoadExits checkFileExits(){
+        return Tasks.instrumented(CheckFileDownLoadExits.class);
     }
 
     @Override

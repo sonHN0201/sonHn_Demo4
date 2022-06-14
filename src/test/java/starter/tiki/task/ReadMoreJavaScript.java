@@ -16,13 +16,7 @@ public class ReadMoreJavaScript implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(HomePage.READ_MORE_JS),
-                WaitABit.sleep(7000),
-                Click.on(ReadMorePage.IMAGE)
-//                WaitABit.sleep(7000)
-
-//                Click.on(ReadMorePage.BTN_ZOOM)
-
+                Click.on(HomePage.READ_MORE_JS)
         );
     }
 }
