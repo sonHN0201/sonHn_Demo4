@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CheckFileDownLoadExits implements Task {
-    public static CheckFileDownLoadExits checkFileExits(){
+    public static CheckFileDownLoadExits checkFileExits() {
         return Tasks.instrumented(CheckFileDownLoadExits.class);
     }
 
@@ -20,7 +20,7 @@ public class CheckFileDownLoadExits implements Task {
     public <T extends Actor> void performAs(T actor) {
         String fileToDownload = "samplefile.pdf";
         String path;
-        path =System.getProperty("user.dir")+"//src//test//resources//dowload//" + fileToDownload;
+        path = System.getProperty("user.dir") + "//src//test//resources//dowload//" + fileToDownload;
         File downloadedFile = SessionLocalTempDirectory.forTheCurrentSession().resolve(path).toFile();
         Awaitility.await().atMost(10, TimeUnit.SECONDS).until(downloadedFile::exists);
         assertThat(downloadedFile).exists();

@@ -4,13 +4,11 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import starter.tiki.helps.WaitABit;
 import starter.tiki.page.HomePage;
-import starter.tiki.page.ReadMorePage;
 
-public class ReadMoreJavaScript implements Task {
-    public static ReadMoreJavaScript readMoreJS() {
-        return Tasks.instrumented(ReadMoreJavaScript.class);
+public class ClickReadMore implements Task {
+    public static ClickReadMore readMoreJS() {
+        return Tasks.instrumented(ClickReadMore.class);
     }
 
     @Override

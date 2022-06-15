@@ -6,10 +6,10 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import starter.tiki.page.HomePage;
 
-public class GoToDemoSiteTab implements Task {
+public class NavigateToMainMenuBar implements Task {
 
-    public static GoToDemoSiteTab navigateLink(){
-        return Tasks.instrumented(GoToDemoSiteTab.class);
+    public static NavigateToMainMenuBar navigateLink() {
+        return Tasks.instrumented(NavigateToMainMenuBar.class);
     }
 
     @Override

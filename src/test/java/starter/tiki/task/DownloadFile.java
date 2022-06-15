@@ -20,11 +20,12 @@ public class DownloadFile implements Task {
         actor.attemptsTo(
                 MoveMouse.to(MoreMenuBar.MORE),
                 Click.on(MoreMenuBar.FILE_DOWNLOAD),
-                WaitABit.sleep(6000),
                 Browser.refreshPage(),
                 MoveMouse.to(MoreMenuBar.MORE),
                 Click.on(MoreMenuBar.FILE_DOWNLOAD),
-                Click.on(DownLoadFilePage.BTN_DOWNLOAD)
+                Click.on(DownLoadFilePage.BTN_DOWNLOAD),
+                WaitABit.sleep(10000),
+                WaitABit.sleep(20000)
         );
     }
 }
