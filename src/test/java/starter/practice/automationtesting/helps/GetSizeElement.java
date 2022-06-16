@@ -1,5 +1,5 @@
 
-package starter.practice.automationtesting.task;
+package starter.practice.automationtesting.helps;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;

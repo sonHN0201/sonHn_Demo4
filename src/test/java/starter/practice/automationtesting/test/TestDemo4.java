@@ -10,8 +10,10 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.questions.TheSize;
 import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import starter.practice.automationtesting.helps.GetSizeElement;
 import starter.practice.automationtesting.page.*;
 import starter.practice.automationtesting.task.*;
 
@@ -24,6 +26,7 @@ public class TestDemo4 {
     Actor sonHN;
 
     @Test
+    @Title("Verify that the user can download the file successfully")
     public void tc_01() {
         givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
         andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
@@ -36,6 +39,7 @@ public class TestDemo4 {
     }
 
     @Test
+    @Title("Verify that the user can zoom in on the image")
     public void tc_02() {
         givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
         when(sonHN).attemptsTo(Click.on(HomePage.READ_MORE_JS));
@@ -63,6 +67,7 @@ public class TestDemo4 {
     }
 
     @Test
+    @Title("Verify that the user can successfully upload the file")
     public void tc_03() {
         String filename = "TestDemo.txt";
 
@@ -77,6 +82,7 @@ public class TestDemo4 {
     }
 
     @Test
+    @Title("Verify that the user can successfully enter \"AUTOMATION TEST\" in the TextBox")
     public void tc_04() {
         String textInput = "AUTOMATION TEST";
 
