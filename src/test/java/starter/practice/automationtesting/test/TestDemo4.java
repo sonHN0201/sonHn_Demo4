@@ -31,7 +31,7 @@ public class TestDemo4 {
         givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
         andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
 
-        sonHN.attemptsTo(CheckFilesInFolder.checkFile());
+        andThat(sonHN).attemptsTo(CheckFilesInFolder.checkFile());
 
         when(sonHN).attemptsTo(DownloadFile.gotoFileDownLoad());
 
@@ -39,7 +39,7 @@ public class TestDemo4 {
     }
 
     @Test
-    @Title("Verify that the user can zoom in on the image")
+    @Title("Verify that the user can zoom in/out on the image")
     public void tc_02() {
         givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
         when(sonHN).attemptsTo(Click.on(HomePage.READ_MORE_JS));
@@ -77,7 +77,7 @@ public class TestDemo4 {
         when(sonHN).attemptsTo(UploadFile.gotoFileUpload(filename));
 
         then(sonHN).should(
-                GivenWhenThen.seeThat("check file upload is successful", WebElementQuestion.the(UploadFilePage.CHECK_FILE), isVisible())
+                seeThat("check file upload is successful", WebElementQuestion.the(UploadFilePage.CHECK_FILE), isVisible())
         );
     }
 
