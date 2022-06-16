@@ -13,6 +13,8 @@ import starter.tiki.page.NavigateToWebsite;
 import starter.tiki.page.UploadFilePage;
 import starter.tiki.task.*;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.*;
+
 @ExtendWith(SerenityJUnit5Extension.class)
 public class TestDemo4 {
     @CastMember(name = "sonHN")
@@ -20,36 +22,38 @@ public class TestDemo4 {
 
     @Test
     public void tc_01() {
-        sonHN.attemptsTo(Open.browserOn(new NavigateToWebsite()));
-        sonHN.attemptsTo(NavigateToMainMenuBar.navigateLink());
-        sonHN.attemptsTo(DownloadFile.gotoFileDownLoad());
-        sonHN.attemptsTo(CheckFileDownLoadExits.checkFileExits());
+        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
+        andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
+        when(sonHN).attemptsTo(DownloadFile.gotoFileDownLoad());
+        then(sonHN).attemptsTo(CheckFileDownLoadExits.checkFileExits());
     }
 
     @Test
     public void tc_02() {
-        sonHN.attemptsTo(Open.browserOn(new NavigateToWebsite()));
-        sonHN.attemptsTo(ClickReadMore.readMoreJS());
-        sonHN.attemptsTo(CheckZoomIn.checkZoom());
+        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
+        when(sonHN).attemptsTo(ClickReadMore.readMoreJS());
+        then(sonHN).attemptsTo(CheckZoomIn.checkZoom());
     }
 
     @Test
     public void tc_03() {
-        sonHN.attemptsTo(Open.browserOn(new NavigateToWebsite()));
-        sonHN.attemptsTo(NavigateToMainMenuBar.navigateLink());
-        sonHN.attemptsTo(UploadFile.gotoFileUpload(UploadFilePage.FILE_NAME));
-        sonHN.attemptsTo(
+        String filename = "TestDemo.txt";
+        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
+        andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
+        when(sonHN).attemptsTo(UploadFile.gotoFileUpload(filename));
+        then(sonHN).attemptsTo(
                 Ensure.that(ElementLocated.by(UploadFilePage.CHECK_FILE)).isDisplayed()
         );
     }
 
     @Test
     public void tc_04() {
-        sonHN.attemptsTo(Open.browserOn(new NavigateToWebsite()));
-        sonHN.attemptsTo(NavigateToMainMenuBar.navigateLink());
-        sonHN.attemptsTo(Frames.switchToFrames());
-        sonHN.attemptsTo(
-                Ensure.that(FramesPage.TXT_FRAMES).hasValue(FramesPage.INPUT_TEXT)
+        String textInput = "AUTOMATION TEST";
+        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
+        andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
+        when(sonHN).attemptsTo(Frames.switchToFrames(textInput));
+        then(sonHN).attemptsTo(
+                Ensure.that(FramesPage.TXT_FRAMES).hasValue(textInput)
         );
     }
 }

@@ -7,5 +7,4 @@ public class UploadFilePage {
 
     public static Target BTN_UPLOAD = Target.the("button upload file").locatedBy("//input[@type='file']");
     public static String CHECK_FILE = "//div[@title='TestDemo.txt']";
-    public static String FILE_NAME="TestDemo.txt";
 }

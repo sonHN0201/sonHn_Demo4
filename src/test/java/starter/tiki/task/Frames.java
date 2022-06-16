@@ -7,12 +7,19 @@ import net.serenitybdd.screenplay.actions.*;
 import starter.tiki.page.FramesPage;
 
 public class Frames implements Task {
-    public static Frames switchToFrames() {
-        return Tasks.instrumented(Frames.class);
+    private final String text;
+
+    public Frames(String text) {
+        this.text = text;
+    }
+
+    public static Frames switchToFrames(String text) {
+        return Tasks.instrumented(Frames.class, text);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String IdFrames = "singleframe";
         actor.attemptsTo(
                 MoveMouse.to(FramesPage.LINK_SWITCH_TO),
                 Click.on(FramesPage.LINK_SWITCH_TO),
@@ -20,8 +27,8 @@ public class Frames implements Task {
                 Browser.refreshPage(),
                 Click.on(FramesPage.LINK_SWITCH_TO),
                 Click.on(FramesPage.LINK_FRAMES),
-                Switch.toFrame(FramesPage.ID_FRAMES),
-                Enter.theValue(FramesPage.INPUT_TEXT).into(FramesPage.TXT_FRAMES)
+                Switch.toFrame(IdFrames),
+                Enter.theValue(text).into(FramesPage.TXT_FRAMES)
         );
     }
 }
