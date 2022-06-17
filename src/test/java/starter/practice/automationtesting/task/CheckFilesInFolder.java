@@ -13,7 +13,7 @@ public class CheckFilesInFolder implements Task {
     }
 
     @Override
-    @Step("Check if the file is in the folder, if so, perform the function to delete the file, then continue")
+    @Step("Check if the file is in the folder, if so, perform the function to delete the file, then continue ...!")
     public <T extends Actor> void performAs(T actor) {
         String fileToDownload = "samplefile.pdf";
         String path;
