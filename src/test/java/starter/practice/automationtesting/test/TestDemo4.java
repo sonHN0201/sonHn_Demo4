@@ -13,6 +13,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import starter.practice.automationtesting.helps.GetSizeElement;
+import starter.practice.automationtesting.helps.WaitABit;
 import starter.practice.automationtesting.page.*;
 import starter.practice.automationtesting.task.*;
 
@@ -24,18 +25,20 @@ public class TestDemo4 {
     @CastMember(name = "sonHN")
     Actor sonHN;
 
-    @Test
-    @Title("Verify that the user can download the file successfully")
-    public void tc_01() {
-        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
-        andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
-
-        andThat(sonHN).attemptsTo(CheckFilesInFolder.checkFile());
-
-        when(sonHN).attemptsTo(DownloadFile.gotoFileDownLoad());
-
-        then(sonHN).attemptsTo(CheckFileDownLoadExits.checkFileExits());
-    }
+//    @Test
+//    @Title("Verify that the user can download the file successfully")
+//    public void tc_01() {
+//
+//        givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
+////        sonHN.attemptsTo(WaitABit.sleep(9999999));
+//        andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
+//
+//        andThat(sonHN).attemptsTo(CheckFilesInFolder.checkFile());
+//
+//        when(sonHN).attemptsTo(DownloadFile.gotoFileDownLoad());
+//
+//        then(sonHN).attemptsTo(CheckFileDownLoadExits.checkFileExits());
+//    }
 
     @Test
     @Title("Verify that the user can zoom in/out on the image")

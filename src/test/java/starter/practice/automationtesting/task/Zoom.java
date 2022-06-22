@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
-import starter.practice.automationtesting.helps.WaitABit;
 import starter.practice.automationtesting.page.ReadMorePage;
 
 public class Zoom implements Task {
