@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.thucydides.core.configuration.SessionLocalTempDirectory;
 import org.awaitility.Awaitility;
+import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -24,5 +25,6 @@ public class CheckFileDownLoadExits implements Task {
         File downloadedFile = SessionLocalTempDirectory.forTheCurrentSession().resolve(path).toFile();
         Awaitility.await().atMost(10, TimeUnit.SECONDS).until(downloadedFile::exists);
         assertThat(downloadedFile).exists();
+
     }
 }
