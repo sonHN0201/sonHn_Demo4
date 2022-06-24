@@ -13,6 +13,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import starter.practice.automationtesting.helps.GetSizeElement;
+import starter.practice.automationtesting.helps.WaitABit;
 import starter.practice.automationtesting.page.*;
 import starter.practice.automationtesting.task.*;
 
@@ -61,6 +62,7 @@ public class TestDemo4 {
         // Zoom out
         givenThat(sonHN).attemptsTo(GetSizeElement.of(ReadMorePage.IMAGE_ZOOM));
         when(sonHN).attemptsTo(Zoom.out());
+        sonHN.attemptsTo(WaitABit.sleep(7000));
         then(sonHN).attemptsTo(
                 Ensure.that(GetSizeElement.getBeforeWidth()).isGreaterThan(TheSize.of(ReadMorePage.IMAGE_ZOOM).answeredBy(sonHN).getWidth()),
                 Ensure.that(GetSizeElement.getBeforeHeight()).isGreaterThan(TheSize.of(ReadMorePage.IMAGE_ZOOM).answeredBy(sonHN).getHeight())
@@ -75,7 +77,6 @@ public class TestDemo4 {
         givenThat(sonHN).attemptsTo(Open.browserOn(new NavigateToWebsite()));
         andThat(sonHN).attemptsTo(NavigateToMainMenuBar.navigateLink());
         when(sonHN).attemptsTo(UploadFile.gotoFileUpload(filename));
-
         then(sonHN).should(
                 seeThat("check file upload is successful", WebElementQuestion.the(UploadFilePage.CHECK_FILE), isVisible())
         );
